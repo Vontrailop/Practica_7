@@ -9,9 +9,9 @@ self.addEventListener('install', (event) => {
         //añade a la shell
         return cache.addAll(
             [
-                '/',
-                '/index.html',
-                '/js/app.js'
+                './',
+                './index.html',
+                './js/app.js'
             ]
         )
     });
@@ -36,5 +36,5 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
     const respCache = caches.match(event.request)
     event.respondWith(respCache)
-})
+});
 
