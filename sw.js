@@ -10,8 +10,16 @@ self.addEventListener('install', (event) => {
         return cache.addAll(
             [
                 './',
+                './manifest.json',
                 './index.html',
-                './js/app.js'
+                './js/app.js',
+                "./images/icons/android-launchericon-48-48.png",
+                "./images/icons/android-launchericon-72-72.png",
+                "./images/icons/android-launchericon-96-96.png",
+                "./images/icons/android-launchericon-144-144.png",
+                "./images/icons/android-launchericon-192-192.png",
+                "./images/icons/android-launchericon-512-512.png",
+
             ]
         );
     });
@@ -39,4 +47,3 @@ self.addEventListener('fetch', (event) => {
     const respCache = caches.match(event.request);
     event.respondWith(respCache);
 });
-
